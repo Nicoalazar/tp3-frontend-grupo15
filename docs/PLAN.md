@@ -129,3 +129,16 @@ lauB revisa R2 y lauO revisa R1. Cada una deja **una mejora concreta** (por ejem
 | 03 · Landing | Organización clara + recursos de navegación/explicación | Índice fijo, leyenda, tabla de verdad, «Recorré un caso» |
 | 04 · Dos flujos | Caso límite/excepción por flujo, con intervención humana | Diagramas + desplegables de excepciones |
 | 05 · Herramientas IA | Evidencia de iteración | Registro de iteraciones de Nico |
+
+---
+
+## 7. Estado de etapas
+
+| Etapa | Estado | Qué quedó |
+|---|---|---|
+| 0 · Material | Hecha | Logo original en `assets/logo-valovibes.webp` (commit `b08f4fc`). Frases R1 y R2 cotejadas con la consigna. |
+| 1 · Estructura | Hecha | `index.html`, `styles.css` y `script.js`: hero con logo completo, índice fijo que marca la sección visible, bloque de la startup y una sección por sentencia con la redacción original. Propuesta, recorrido y detalles quedan como marcadores para la etapa 2. Verificada en el navegador: el logo carga, no hay desborde horizontal y el índice cambia de sección al hacer scroll. |
+| 2 · Contenido y diagramas | Pendiente | — |
+| 3 · Diseño y «Propone» | Pendiente | — |
+| 4 · README | Pendiente | — |
+| 5 · Publicación | Pendiente | — |
