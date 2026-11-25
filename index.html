@@ -74,17 +74,127 @@
 
       <div class="subbloque propuesta">
         <h3>Propuesta</h3>
-        <p class="pendiente">Pendiente: se completa en la etapa 2.</p>
+        <p class="propuesta-titulo"><strong>Recordatorio claro, sin castigo</strong></p>
+        <p>Cuando falta la encuesta requerida, el sistema detecta el requisito pendiente y guía al jugador para completarla antes de seguir. La respuesta informa qué falta y cómo resolverlo, pero <strong>no atribuye ninguna sanción</strong>, evitando confundir un trámite incompleto con una mala conducta.</p>
       </div>
 
       <div class="subbloque recorrido">
         <h3>Recorrido</h3>
-        <p class="pendiente">Pendiente: diagrama en la etapa 2.</p>
+        <p class="explicacion">El flujo revisa solo el dato que define la regla: el estado de la encuesta requerida. Si no está completa, el sistema solicita completarla y deja explícito que no hay sanción. Si está completa, R2 no aplica y el proceso continúa con la evaluación de R1; ese paso posterior es una <span class="marca-grupo">decisión del grupo</span>, porque la regla no lo define.</p>
+
+        <figure class="diagrama">
+          <svg viewBox="0 0 760 520" role="img" aria-labelledby="r2-titulo r2-desc" xmlns="http://www.w3.org/2000/svg">
+            <title id="r2-titulo">Diagrama del flujo R2</title>
+            <desc id="r2-desc">Inicio, consulta del estado de la encuesta requerida, decisión. Si no está completa: solicita completar encuesta sin atribuir sanción y resultado pendiente. Si está completa: R2 no aplica y pasa a evaluar R1. Caso límite: error o encuesta a medias deriva a revisión humana.</desc>
+            <defs>
+              <marker id="flecha-r2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L9,3 z" fill="currentColor" />
+              </marker>
+            </defs>
+
+            <rect x="290" y="20" width="180" height="44" rx="22" class="nodo nodo-inicio" />
+            <text x="380" y="47" text-anchor="middle" class="nodo-texto">Inicio</text>
+
+            <line x1="380" y1="64" x2="380" y2="92" class="flecha" marker-end="url(#flecha-r2)" />
+
+            <rect x="245" y="92" width="270" height="52" rx="10" class="nodo nodo-dato" />
+            <text x="380" y="114" text-anchor="middle" class="nodo-texto">Consultar estado de la</text>
+            <text x="380" y="132" text-anchor="middle" class="nodo-texto">encuesta requerida</text>
+
+            <line x1="380" y1="144" x2="380" y2="178" class="flecha" marker-end="url(#flecha-r2)" />
+
+            <polygon points="380,178 470,228 380,278 290,228" class="nodo nodo-decision" />
+            <text x="380" y="224" text-anchor="middle" class="nodo-texto">¿Encuesta</text>
+            <text x="380" y="242" text-anchor="middle" class="nodo-texto">completa?</text>
+
+            <!-- Rama No -->
+            <line x1="290" y1="228" x2="170" y2="228" class="flecha" marker-end="url(#flecha-r2)" />
+            <text x="230" y="218" text-anchor="middle" class="etiqueta-rama">No</text>
+
+            <rect x="30" y="196" width="140" height="64" rx="10" class="nodo nodo-accion" />
+            <text x="100" y="218" text-anchor="middle" class="nodo-texto">Solicitar completar</text>
+            <text x="100" y="236" text-anchor="middle" class="nodo-texto">la encuesta</text>
+
+            <line x1="100" y1="260" x2="100" y2="292" class="flecha" marker-end="url(#flecha-r2)" />
+
+            <rect x="20" y="292" width="160" height="56" rx="10" class="nodo nodo-regla" />
+            <text x="100" y="314" text-anchor="middle" class="nodo-texto">No atribuir</text>
+            <text x="100" y="332" text-anchor="middle" class="nodo-texto">sanción</text>
+
+            <line x1="100" y1="348" x2="100" y2="382" class="flecha" marker-end="url(#flecha-r2)" />
+
+            <rect x="15" y="382" width="170" height="56" rx="10" class="nodo nodo-resultado" />
+            <text x="100" y="404" text-anchor="middle" class="nodo-texto">Resultado: encuesta</text>
+            <text x="100" y="422" text-anchor="middle" class="nodo-texto">pendiente, sin sanción</text>
+
+            <!-- Rama Sí -->
+            <line x1="470" y1="228" x2="590" y2="228" class="flecha" marker-end="url(#flecha-r2)" />
+            <text x="530" y="218" text-anchor="middle" class="etiqueta-rama">Sí</text>
+
+            <rect x="590" y="196" width="150" height="64" rx="10" class="nodo nodo-grupo" />
+            <text x="665" y="218" text-anchor="middle" class="nodo-texto">R2 no aplica</text>
+            <text x="665" y="236" text-anchor="middle" class="nodo-texto">pasa a evaluar R1</text>
+
+            <line x1="665" y1="260" x2="665" y2="382" class="flecha" marker-end="url(#flecha-r2)" />
+
+            <rect x="590" y="382" width="150" height="56" rx="10" class="nodo nodo-resultado" />
+            <text x="665" y="404" text-anchor="middle" class="nodo-texto">Resultado: continúa</text>
+            <text x="665" y="422" text-anchor="middle" class="nodo-texto">el flujo de ingreso</text>
+
+            <!-- Caso límite -->
+            <line x1="380" y1="278" x2="380" y2="332" class="flecha flecha-limite" marker-end="url(#flecha-r2)" />
+            <text x="430" y="308" text-anchor="middle" class="etiqueta-rama etiqueta-limite">Caso límite</text>
+
+            <rect x="270" y="332" width="220" height="64" rx="10" class="nodo nodo-humano" />
+            <text x="380" y="354" text-anchor="middle" class="nodo-texto">Encuesta a medias o error</text>
+            <text x="380" y="372" text-anchor="middle" class="nodo-texto">reportado por el jugador</text>
+
+            <line x1="380" y1="396" x2="380" y2="432" class="flecha flecha-limite" marker-end="url(#flecha-r2)" />
+
+            <rect x="255" y="432" width="250" height="64" rx="10" class="nodo nodo-humano" />
+            <text x="380" y="454" text-anchor="middle" class="nodo-texto">Recordatorio sin sanción</text>
+            <text x="380" y="472" text-anchor="middle" class="nodo-texto">+ revisión humana</text>
+          </svg>
+          <figcaption>Diagrama R2. La acción «pasa a evaluar R1» y el caso límite son <span class="marca-grupo">decisiones del grupo</span>; la ausencia de sanción viene indicada por la regla.</figcaption>
+        </figure>
       </div>
 
       <div class="subbloque detalles">
         <h3>Detalles</h3>
-        <p class="pendiente">Pendiente: desplegables en la etapa 2.</p>
+
+        <details>
+          <summary>Datos necesarios</summary>
+          <ul>
+            <li><strong>Estado de la encuesta requerida:</strong> completa / no completa.</li>
+            <li><strong>Dato complementario para el caso límite:</strong> reporte del jugador sobre un error o estado inconsistente de la encuesta.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Condición evaluada</summary>
+          <p>La regla se activa cuando se cumple la negación: <code>¬ encuesta completa</code>. No exige comprobar sanciones ni micrófono; solo verifica si falta la encuesta requerida.</p>
+        </details>
+
+        <details>
+          <summary>Consecuencia de la regla</summary>
+          <p>Si la condición se cumple, el sistema debe hacer dos cosas: <strong>solicitar completar la encuesta</strong> y <strong>no atribuir una sanción</strong>. Ambas partes son obligatorias y forman parte de la regla original.</p>
+        </details>
+
+        <details>
+          <summary>Lo que no define la regla</summary>
+          <p>La regla no indica qué ocurre cuando la encuesta ya está completa. Como <span class="marca-grupo">decisión del grupo</span>, en ese caso R2 no aplica y el flujo continúa con la evaluación de R1. La regla tampoco borra ni modifica sanciones previas.</p>
+        </details>
+
+        <details>
+          <summary>Vínculo con R1</summary>
+          <p>R1 exige encuesta completa entre sus condiciones. Por eso, cuando R1 no se cumple por falta de encuesta, aplica R2: se pide completarla y se evita atribuir una sanción. R2 resuelve el requisito faltante sin bloquear al jugador con un castigo indebido.</p>
+        </details>
+
+        <details>
+          <summary>Caso límite y intervención humana</summary>
+          <p><strong>Caso límite:</strong> la encuesta quedó a medias, el sistema no puede confirmar su estado, o el jugador reporta un error al completarla.</p>
+          <p><strong>Respuesta propuesta:</strong> el sistema mantiene el recordatorio sin sanción y deriva el caso a revisión humana. <span class="marca-grupo">Decisión del grupo:</span> una persona del equipo revisa el estado real de la encuesta antes de habilitar o bloquear el ingreso, para evitar un falso rechazo o una sanción incorrecta.</p>
+        </details>
       </div>
     </section>
 
