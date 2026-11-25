@@ -65,6 +65,17 @@ Desarrollo de Sistemas Web · Front End · IFTS 29 · 2026 · 2do cuatrimestre
 
 **Regla del TP:** nadie edita código a mano. Todos los cambios se le piden al agente (Claude Code) y quedan registrados.
 
+### Responsables por etapa
+
+| Etapa | Responsables | Qué hace cada uno |
+|---|---|---|
+| 0 · Material | Chris, lauB, lauO | Chris revisa la descarga del logo (la hizo el agente). lauB y lauO validan sus fichas contra la consigna. |
+| 1 · Estructura | Nico | Dirige al agente para armar la base: hero, índice y una sección por sentencia. |
+| 2 · Contenido y diagramas | lauB (R1), lauO (R2) | Cada una revisa el diagrama y los desplegables de su sentencia, y define el caso límite. |
+| 3 · Diseño y «Propone» | Fer, lauB, lauO, Nico | Fer prueba en desktop. lauB y lauO agregan la tabla de verdad y el caso límite de cada flujo. Nico lleva el registro de iteraciones. |
+| 4 · README | Todos | Nico: herramientas y registro. Fer: checklist de pruebas. Chris: cómo reproducir. lauB ↔ lauO: revisión cruzada. Cada uno: su aporte. |
+| 5 · Publicación | Chris (Fer comprueba) | Chris conecta el repo a Vercel y prueba los dos enlaces sin sesión. Fer confirma que la versión final se vea bien. |
+
 ---
 
 ## 4. Reparto de tareas
