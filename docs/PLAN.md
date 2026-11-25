@@ -15,7 +15,11 @@ Desarrollo de Sistemas Web · Front End · IFTS 29 · 2026 · 2do cuatrimestre
 | Objetivo | Búsqueda de compañeros de Valorant compatibles y coordinación de invitaciones. |
 | Sorteo | S12-A |
 | Bloque | Ingreso a la búsqueda |
-| Logo | Original, descargado de la página del grupo 15 en la consigna (completo y legible) |
+| Logo | Original: `assets/logo-valovibes.webp` (640×640 WebP, 9.682 bytes), descargado de `https://ifts29-portada.vercel.app/trayecto/tp3/logos/S12.webp` (botón «Descargar logo» del grupo 15). SHA-256 `a47ac81b…632b44`. Copia byte a byte, sin recortes ni conversión. |
+
+> **Observación sobre el logo:** la palabra «VALOVIBES» queda parcialmente tapada por las patas del oso. Es el logo original; la landing debe mostrarlo completo (sin recortar ni tapar) y sin rediseñarlo. Si la lectura del texto en miniatura no alcanza, usar tamaño mayor.
+>
+> **Ojo:** los grupos 14, 15 y 17 tienen la misma startup ValoVibes y el mismo logo (S12). Este TP usa solo las frases del grupo 15 (sorteo S12-A).
 
 **Frase 1 · R1:** «Si el jugador no tiene sanciones activas, completó la encuesta requerida y dispone de micrófono, el sistema habilita su ingreso a la búsqueda de compañeros.»
 
