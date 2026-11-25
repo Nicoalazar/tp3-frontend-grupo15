@@ -138,7 +138,7 @@ lauB revisa R2 y lauO revisa R1. Cada una deja **una mejora concreta** (por ejem
 |---|---|---|
 | 0 · Material | Hecha | Logo original en `assets/logo-valovibes.webp` (commit `b08f4fc`). Frases R1 y R2 cotejadas con la consigna. |
 | 1 · Estructura | Hecha | `index.html`, `styles.css` y `script.js`: hero con logo completo, índice fijo que marca la sección visible, bloque de la startup y una sección por sentencia con la redacción original. Propuesta, recorrido y detalles quedan como marcadores para la etapa 2. Verificada en el navegador: el logo carga, no hay desborde horizontal y el índice cambia de sección al hacer scroll. |
-| 2 · Contenido y diagramas | Pendiente | — |
-| 3 · Diseño y «Propone» | Pendiente | — |
-| 4 · README | Pendiente | — |
+| 2 · Contenido y diagramas | Hecha (falta revisión de lauB y lauO) | Propuesta con título y beneficio para R1 y R2, dos diagramas SVG con alternativas Sí/No rotuladas, desplegables con datos, decisión, acción, excepciones y qué es decisión del grupo. Hecho con Claude (claude.ai), modelo Claude Opus 5.5. |
+| 3 · Diseño y «Propone» | Hecha (falta prueba de Fer) | Leyenda, tablas de verdad, «Recorré un caso» que resalta el camino, sección que une R1 y R2. Probado en desktop 1366 px: sin desbordes, desplegables con Enter/Espacio, modo claro y oscuro. |
+| 4 · README | Borrador | Estructura completa; faltan nombres, aportes, modelo de Claude Code, iteraciones y checklist. |
 | 5 · Publicación | Pendiente | — |
