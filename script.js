@@ -61,10 +61,13 @@
       if (!v.mic) { faltan.push("no dispone de micrófono"); }
       var texto = "No se habilita el ingreso porque " + unir(faltan) +
         ". El agente le informa el motivo (decisión del grupo).";
+      var enlace = null;
       if (!v.encuesta) {
         texto += " Como falta la encuesta, aplica R2.";
+        // Revisión cruzada de R1 (Nico): enlace directo al flujo de R2.
+        enlace = { href: "#r2", texto: "Ver cómo sigue en R2" };
       }
-      return { pasos: pasos.concat(["D-G", "G", "G-Gf", "Gf"]), texto: texto };
+      return { pasos: pasos.concat(["D-G", "G", "G-Gf", "Gf"]), texto: texto, enlace: enlace };
     },
 
     r2: function (v) {
@@ -102,6 +105,14 @@
     if (!svg || !salida || !calcular) { return; }
 
     function actualizar() {
+      // Revisión cruzada de R2 (propuesta de lauB): «Reporta un problema» solo
+      // aplica si la encuesta falta, así que se deshabilita con la encuesta completa.
+      var encuesta = sim.querySelector("input[name='encuesta']");
+      var problema = sim.querySelector("input[name='problema']");
+      if (encuesta && problema) {
+        problema.disabled = encuesta.checked;
+        if (encuesta.checked) { problema.checked = false; }
+      }
       var valores = {};
       sim.querySelectorAll("input[type='checkbox']").forEach(function (input) {
         valores[input.name] = input.checked;
@@ -112,6 +123,13 @@
         el.classList.toggle("activo", r.pasos.indexOf(el.getAttribute("data-id")) !== -1);
       });
       salida.textContent = r.texto;
+      if (r.enlace) {
+        var a = document.createElement("a");
+        a.href = r.enlace.href;
+        a.textContent = r.enlace.texto;
+        salida.appendChild(document.createTextNode(" "));
+        salida.appendChild(a);
+      }
     }
 
     sim.addEventListener("change", actualizar);

@@ -166,6 +166,7 @@
           <ul>
             <li><strong>Cumple:</strong> sin sanción, encuesta completa y con micrófono → se habilita el ingreso.</li>
             <li><strong>No cumple:</strong> con encuesta y micrófono pero con una sanción activa → no se habilita y se informa el motivo.</li>
+            <li><strong>Falta la encuesta:</strong> sin sanción y con micrófono pero sin la encuesta → no se habilita y se le pide completarla sin sanción, como indica <a href="#r2">R2</a>.</li>
             <li><strong>Caso límite:</strong> el registro de moderación no responde → se deriva a un moderador humano.</li>
           </ul>
         </details>
@@ -272,8 +273,9 @@
         <fieldset>
           <legend class="sr-only">Situación del jugador para R2</legend>
           <label><input type="checkbox" name="encuesta"> Completó la encuesta</label>
-          <label><input type="checkbox" name="problema"> Reporta un problema con la encuesta</label>
+          <label><input type="checkbox" name="problema" aria-describedby="ayuda-problema"> Reporta un problema con la encuesta</label>
         </fieldset>
+        <p class="ayuda" id="ayuda-problema">La opción de reportar un problema solo se puede marcar si la encuesta no está completa.</p>
         <p class="resultado" aria-live="polite"></p>
       </div>
 

@@ -116,7 +116,7 @@ lauB revisa R2 y lauO revisa R1. Cada una deja **una mejora concreta** (por ejem
 - [ ] Cómo reproducir el proyecto + comprobación de enlaces y funcionamiento.
 - [ ] Aplicación y modelo de IA usados (nombre tal como aparece; si no figura: «modelo no informado»), para qué y qué cambios se pidieron.
 - [ ] Evidencia de iteración: instrucción inicial → problema detectado → pedido de mejora → qué cambió y por qué.
-- [ ] Revisión entre integrantes y la mejora surgida.
+- [x] Revisión entre integrantes y la mejora surgida.
 
 ---
 
@@ -138,7 +138,7 @@ lauB revisa R2 y lauO revisa R1. Cada una deja **una mejora concreta** (por ejem
 |---|---|---|
 | 0 · Material | Hecha | Logo original en `assets/logo-valovibes.webp` (commit `b08f4fc`). Frases R1 y R2 cotejadas con la consigna. |
 | 1 · Estructura | Hecha | `index.html`, `styles.css` y `script.js`: hero con logo completo, índice fijo que marca la sección visible, bloque de la startup y una sección por sentencia con la redacción original. Propuesta, recorrido y detalles quedan como marcadores para la etapa 2. Verificada en el navegador: el logo carga, no hay desborde horizontal y el índice cambia de sección al hacer scroll. |
-| 2 · Contenido y diagramas | Hecha (falta revisión de lauB y lauO) | Propuesta con título y beneficio para R1 y R2, dos diagramas SVG con alternativas Sí/No rotuladas, desplegables con datos, decisión, acción, excepciones y qué es decisión del grupo. Hecho con Claude (claude.ai), modelo Claude Opus 5.5. |
+| 2 · Contenido y diagramas | Hecha (revisión cruzada de R2 propuesta por lauB y de R1 hecha por Nico, las dos aplicadas) | Propuesta con título y beneficio para R1 y R2, dos diagramas SVG con alternativas Sí/No rotuladas, desplegables con datos, decisión, acción, excepciones y qué es decisión del grupo. Hecho con Claude (claude.ai), modelo Claude Opus 5.5. |
 | 3 · Diseño y «Propone» | Hecha (Fer confirmó clic y teclado en desktop) | Leyenda, tablas de verdad, «Recorré un caso» que resalta el camino, sección que une R1 y R2. Probado en desktop 1366 px: sin desbordes, desplegables con Enter/Espacio, modo claro y oscuro. |
-| 4 · README | En curso | Estructura completa. Chris completó su aporte, «cómo reproducir», enlaces y la comprobación en ventana sin sesión (repo verificado el 25/11/2026); faltan los aportes de Nico y Fer, la revisión cruzada y las iteraciones de las etapas 2 y 3. |
+| 4 · README | En curso | Estructura completa. Chris completó su aporte, «cómo reproducir», enlaces y la comprobación en ventana sin sesión (repo verificado el 25/11/2026); Ya están los aportes de todos, la checklist de Fer, las iteraciones 1 a 7 y la revisión cruzada (lauB sobre R2; Nico sobre R1, porque la de lauO no quedó en el repo). |
 | 5 · Publicación | Hecha (revisión visual de Fer hecha) | Repo público en GitHub. Landing publicada en https://tp3-frontend-grupo15.vercel.app/ (Vercel, conectada por Chris). Responde sin sesión (HTTP 200) y los archivos publicados son idénticos a `main`. URL cargada en el README. Fer hizo la revisión visual en desktop. |

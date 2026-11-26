@@ -360,10 +360,29 @@ figcaption {
   align-items: center;
 }
 
+.simulador label:has(input:disabled) {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .simulador input {
   width: 1.1rem;
   height: 1.1rem;
   accent-color: var(--acento);
+}
+
+.sentencia a {
+  color: var(--acento);
+}
+
+.resultado a {
+  white-space: nowrap;
+}
+
+.ayuda {
+  margin: 0.5rem 0 0;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
 }
 
 .resultado {
