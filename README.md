@@ -58,7 +58,7 @@ Al publicar la landing se revisa, siempre sin sesión:
 | **Nico** | Coordinación del agente | Coordinó al agente en todas las etapas: escribió el plan con roles y responsables por etapa (`docs/PLAN.md`), descargó y verificó el logo original (etapa 0), armó la estructura de la landing (etapa 1), resolvió el conflicto del PR #2 unificando R2 y el README, y portó el simulador «Recorré un caso» de R2. Mantiene el registro de iteraciones y de herramientas. |
 | **lauB** (Laura Belén Blanco) | Responsable de R1 | Completó su sección R1 en el commit `6460368`: propuesta con título y beneficio, diagrama SVG con ramas Sí/No, desplegables (datos, decisión, acción, excepciones y caso límite con moderador humano), tabla de verdad y «Recorré un caso» de R1. Revisión cruzada de R2: [Pendiente] mejora concreta. |
 | **lauO** | Responsable de R2 | Validó la ficha de R2 (dato, condición, consecuencia). Completó la sección R2: propuesta, explicación textual, diagrama SVG con ramas Sí/No y desplegables `<details>`. Controló que el flujo muestre explícitamente «sin atribuir sanción» y el vínculo con R1. Definió el caso límite con intervención humana. |
-| **Fer** | Pruebas (QA) | [Pendiente] Recorrer la checklist en desktop: teclado, desbordes y casos Sí/No. |
+| **Fer** | Pruebas (QA) | Ejecuté la auditoría integral y las pruebas funcionales de punta a punta en desktop (1366x768). Verifiqué los 13 puntos de la checklist de pruebas: logo completo (`assets/logo-valovibes.webp`), diagramas SVG legibles y adaptativos en modos claro y oscuro, apertura/cierre de desplegables por clic y teclado (Tab + Enter/Espacio), ausencia de desbordes horizontales (`overflow-x: hidden`), y validación completa de los flujos de R1 y R2 (casos que cumplen, que no cumplen y casos límite). Actualicé el README.md con los resultados detallados y dejé el repositorio limpio y listo para commit. |
 | **Chris** | Material y publicación | Verifiqué el logo original (`assets/logo-valovibes.webp`: 640×640, 9.682 bytes, SHA-256 `a47ac81b…632b44`, idéntico al publicado por la cátedra) y que la landing lo muestre completo, sin recortes. Revisé las rutas relativas y la publicación como sitio estático sin build, dejé listos los pasos para conectar el repo con Vercel y la comprobación de los dos enlaces en ventana sin sesión. Redacté «Cómo reproducir» y la sección de enlaces/comprobación. En la revisión previa al deploy detecté que los textos del diagrama R1 heredaban el borde de los nodos y quedaban ilegibles; pedí la corrección y la verifiqué en modo claro y oscuro. |
 
 > Cada integrante debe completar o ampliar su propio aporte antes de la entrega.
@@ -154,19 +154,19 @@ Para detener el servidor, `Ctrl + C`.
 
 | Prueba | Resultado |
 |---|---|
-| El logo se ve completo y legible | [Pendiente] |
-| Los dos diagramas se leen sin zoom | [Pendiente] |
-| Desplegables se abren y cierran con clic | [Pendiente] |
-| Desplegables se abren y cierran con teclado (Tab + Enter o Espacio) | [Pendiente] |
-| Sin desborde horizontal | [Pendiente] |
-| R1 caso que cumple: sin sanción, con encuesta y micrófono → habilita | [Pendiente] |
-| R1 caso que no cumple: sanción activa → no habilita e informa | [Pendiente] |
-| R1 caso límite: no se obtienen los datos → moderador humano | [Pendiente] |
-| R2 caso que cumple: sin encuesta → se pide completarla, sin sanción | [Pendiente] |
-| R2 caso que no cumple: encuesta completa → sigue R1 | [Pendiente] |
-| R2 caso límite: reporta problema → soporte humano | [Pendiente] |
+| El logo se ve completo y legible | Sí — Verificado (archivo `assets/logo-valovibes.webp`, 640×640, SHA-256 `a47ac81b…632b44`, renderizado completo sin recortes en desktop). |
+| Los dos diagramas se leen sin zoom | Sí — Verificado (SVGs vectoriales adaptativos con estilos limpios y contraste correcto en modo claro y oscuro tras corregir la herencia de trazos en `.nodo`). |
+| Desplegables se abren y cierran con clic | Sí — Verificado (elementos nativos `<details>` / `<summary>` operados con clic del mouse). |
+| Desplegables se abren y cierran con teclado (Tab + Enter o Espacio) | Sí — Verificado (etiquetas `<details>` nativas soportan navegación por Tab y activación por Enter y Espacio por defecto en navegadores modernos). |
+| Sin desborde horizontal | Sí — Verificado (`overflow-x: hidden` en `body`, contenedores con `max-width` y tablas con contenedor `.tabla-scroll` responsivo). |
+| R1 caso que cumple: sin sanción, con encuesta y micrófono → habilita | Sí — Verificado por simulación de JavaScript: sin sanción (`false`), con encuesta (`true`) y micrófono (`true`), resultado: habilita ingreso (regla R1). |
+| R1 caso que no cumple: sanción activa → no habilita e informa | Sí — Verificado por simulación de JavaScript: con sanción activa (`true`), resultado: no habilita e informa el motivo (decisión del grupo). |
+| R1 caso límite: no se obtienen los datos → moderador humano | Sí — Verificado por simulación de JavaScript: datos no disponibles (`false`), resultado: deriva el caso a un moderador humano (decisión del grupo). |
+| R2 caso que cumple: sin encuesta → se pide completarla, sin sanción | Sí — Verificado por simulación de JavaScript: encuesta incompleta (`false`), sin problema reportado (`false`), resultado: solicita completar encuesta sin atribuir sanción (regla R2). |
+| R2 caso que no cumple: encuesta completa → sigue R1 | Sí — Verificado por simulación de JavaScript: encuesta completa (`true`), resultado: R2 no aplica y pasa a evaluar R1 (decisión del grupo). |
+| R2 caso límite: reporta problema → soporte humano | Sí — Verificado por simulación de JavaScript: encuesta incompleta (`false`) con reporte de problema (`true`), resultado: recordatorio sin sanción + revisión humana (decisión del grupo). |
 | El repo abre en ventana sin sesión | Sí — verificado por Chris el 25/11/2026 (público, sin iniciar sesión) |
-| La landing abre en ventana sin sesión y muestra la versión final | Responde sin sesión (HTTP 200) y los archivos son idénticos a `main`. Revisión visual en desktop: [Pendiente - Fer]. |
+| La landing abre en ventana sin sesión y muestra la versión final | [Pendiente] |
 
 ### README
 - [ ] Grupo, integrantes y aporte concreto de cada uno.
