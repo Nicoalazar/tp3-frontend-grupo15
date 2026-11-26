@@ -12,8 +12,10 @@
   <nav class="indice" aria-label="Índice de la página">
     <a href="#inicio">Inicio</a>
     <a href="#startup">Startup</a>
+    <a href="#leer">Cómo leer</a>
     <a href="#r1">Sentencia R1</a>
     <a href="#r2">Sentencia R2</a>
+    <a href="#relacion">R1 + R2</a>
   </nav>
 
   <header class="hero" id="inicio">
@@ -21,7 +23,11 @@
     <p class="eyebrow">TP3 · Grupo 15 · Desarrollo de Sistemas Web · Front End · IFTS 29</p>
     <h1>ValoVibes</h1>
     <p class="servicio">Videojuegos y comunidades</p>
-    <p class="lead">Propuestas agénticas para las dos sentencias asignadas a ValoVibes.</p>
+    <p class="lead">Dos sentencias, dos soluciones: cómo un futuro agente podría decidir quién entra a la búsqueda de compañeros de ValoVibes.</p>
+    <div class="atajos">
+      <a class="boton" href="#r1">Ver propuesta R1</a>
+      <a class="boton" href="#r2">Ver propuesta R2</a>
+    </div>
   </header>
 
   <main>
@@ -35,15 +41,31 @@
         <dd>Videojuegos y comunidades</dd>
         <dt>Objetivo de la startup</dt>
         <dd>Búsqueda de compañeros de Valorant compatibles y coordinación de invitaciones.</dd>
+        <dt>El problema</dt>
+        <dd>Para que la búsqueda de compañeros funcione bien, solo deberían entrar jugadores que no estén sancionados, que hayan completado la encuesta que permite encontrar compañeros compatibles y que tengan micrófono para comunicarse en la partida. Revisar todo eso a mano para cada jugador lleva tiempo y es fácil equivocarse.</dd>
         <dt>Bloque asignado</dt>
-        <dd>Ingreso a la búsqueda</dd>
+        <dd>Ingreso a la búsqueda (sorteo S12-A)</dd>
         <dt>Origen</dt>
-        <dd>Startup creada por estudiantes del IFTS 16.</dd>
+        <dd>Startup creada por estudiantes del IFTS 16, que escribieron sus reglas de funcionamiento con lógica proposicional.</dd>
         <dt>Equipo</dt>
-        <dd>Grupo 15 · IFTS 29</dd>
+        <dd>Grupo 15 · IFTS 29 · Front End</dd>
       </dl>
+      <p class="aviso">Esta página explica y dibuja dos propuestas. No ejecuta agentes, no usa IA ni se conecta a ningún sistema real.</p>
     </section>
 
+    <section id="leer" class="bloque">
+      <h2>Cómo leer los diagramas</h2>
+      <p>Cada diagrama se lee de arriba hacia abajo, como una historia: qué entra, qué consulta el agente, qué decide y cómo termina. Los rombos son decisiones y las flechas indican el camino según la respuesta.</p>
+      <ul class="leyenda" aria-label="Leyenda de los diagramas">
+        <li><span class="muestra m-regla" aria-hidden="true"></span><span><strong>Regla:</strong> lo que dice la sentencia original.</span></li>
+        <li><span class="muestra m-grupo" aria-hidden="true"></span><span><strong>Decisión del grupo:</strong> la sentencia no lo define, lo agregamos nosotros (borde punteado).</span></li>
+        <li><span class="muestra m-humano" aria-hidden="true"></span><span><strong>Intervención humana:</strong> el agente pide ayuda a una persona.</span></li>
+        <li><span class="muestra m-herramienta" aria-hidden="true"></span><span><strong>Herramienta:</strong> lo que el agente consultaría.</span></li>
+        <li><span class="muestra m-fin" aria-hidden="true"></span><span><strong>Inicio y fin</strong> del recorrido.</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== R1 ===================== -->
     <section id="r1" class="sentencia">
       <h2>Sentencia 1 · R1</h2>
       <blockquote class="original">
@@ -51,21 +73,106 @@
       </blockquote>
 
       <div class="subbloque propuesta">
-        <h3>Propuesta</h3>
-        <p class="pendiente">Pendiente: se completa en la etapa 2.</p>
+        <h3>Propuesta · Pase verificado a la búsqueda</h3>
+        <p>Un futuro agente revisaría automáticamente las tres condiciones cada vez que un jugador quiera entrar a la búsqueda de compañeros y lo habilitaría solo cuando se cumplan las tres juntas.</p>
+        <p>El beneficio es que el jugador entra al instante si está todo en orden, y si algo falta sabe exactamente qué tiene que resolver. Así la comunidad se mantiene sana sin que el equipo de ValoVibes tenga que revisar cada caso a mano.</p>
       </div>
 
       <div class="subbloque recorrido">
         <h3>Recorrido</h3>
-        <p class="pendiente">Pendiente: diagrama en la etapa 2.</p>
+        <figure class="figura">
+          <svg class="diagrama" viewBox="0 0 900 770" role="img" aria-labelledby="r1-titulo r1-desc" xmlns="http://www.w3.org/2000/svg"><title id="r1-titulo">Diagrama del flujo de la sentencia R1</title><desc id="r1-desc">El jugador pide entrar a la búsqueda. El agente consulta sanciones, encuesta y micrófono. Si no puede obtener los datos, deriva a un moderador humano. Si no tiene sanciones activas, completó la encuesta y dispone de micrófono, se habilita el ingreso. Si falta alguna condición, no se habilita y se informa el motivo; si falta la encuesta, aplica R2.</desc><defs><marker id="punta-r1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" /></marker></defs><g class="flecha" data-id="A-B"><path d="M300,70 L300,105" marker-end="url(#punta-r1)" /></g><g class="flecha" data-id="B-C"><path d="M300,205 L300,230" marker-end="url(#punta-r1)" /></g><g class="flecha" data-id="C-H"><path d="M450,290 L560,290" marker-end="url(#punta-r1)" /><text class="etq" x="505" y="280" text-anchor="middle">No</text></g><g class="flecha" data-id="H-Hf"><path d="M700,335 L700,360" marker-end="url(#punta-r1)" /></g><g class="flecha" data-id="C-D"><path d="M300,350 L300,410" marker-end="url(#punta-r1)" /><text class="etq" x="318" y="385" text-anchor="middle">Sí</text></g><g class="flecha" data-id="D-G"><path d="M490,485 L550,485" marker-end="url(#punta-r1)" /><text class="etq" x="520" y="475" text-anchor="middle">No</text></g><g class="flecha" data-id="G-Gf"><path d="M700,535 L700,600" marker-end="url(#punta-r1)" /></g><g class="flecha" data-id="D-E"><path d="M300,560 L300,600" marker-end="url(#punta-r1)" /><text class="etq" x="318" y="585" text-anchor="middle">Sí</text></g><g class="flecha" data-id="E-F"><path d="M300,660 L300,700" marker-end="url(#punta-r1)" /></g><g class="nodo inicio" data-id="A"><rect x="135.0" y="20" width="330" height="50" rx="25.0" /><text text-anchor="middle" dominant-baseline="middle"><tspan x="300" y="36.0">Inicio: el jugador pide entrar</tspan><tspan x="300" y="54.0">a la búsqueda de compañeros</tspan></text></g><g class="nodo herramienta" data-id="B"><rect x="130.0" y="105" width="340" height="100" rx="8" /><text text-anchor="middle" dominant-baseline="middle"><tspan x="300" y="128.0">El agente consulta tres datos:</tspan><tspan x="300" y="146.0">sanciones → registro de moderación</tspan><tspan x="300" y="164.0">encuesta → registro de encuestas</tspan><tspan x="300" y="182.0">micrófono → prueba de audio</tspan></text></g><g class="nodo decision grupo" data-id="C"><polygon points="300,230 450.0,290.0 300,350 150.0,290.0" /><text text-anchor="middle" dominant-baseline="middle"><tspan x="300" y="281.0">¿Pudo obtener</tspan><tspan x="300" y="299.0">los tres datos?</tspan></text></g><g class="nodo humano" data-id="H"><rect x="560.0" y="245" width="280" height="90" rx="8" /><text text-anchor="middle" dominant-baseline="middle"><tspan x="700" y="272.0">Derivar a un moderador humano</tspan><tspan x="700" y="290.0">para que revise el caso</tspan><tspan x="700" y="308.0">(decisión del grupo)</tspan></text></g><g class="nodo fin" data-id="Hf"><rect x="560.0" y="360" width="280" height="50" rx="25.0" /><text text-anchor="middle" dominant-baseline="middle"><tspan x="700" y="385.0">Fin: caso en revisión humana</tspan></text></g><g class="nodo decision" data-id="D"><polygon points="300,410 490.0,485.0 300,560 110.0,485.0" /><text text-anchor="middle" dominant-baseline="middle"><tspan x="300" y="467.0">¿No tiene sanciones activas</tspan><tspan x="300" y="485.0">Y completó la encuesta</tspan><tspan x="300" y="503.0">Y dispone de micrófono?</tspan></text></g><g class="nodo grupo" data-id="G"><rect x="550.0" y="435" width="300" height="100" rx="8" /><text text-anchor="middle" dominant-baseline="middle"><tspan x="700" y="458.0">No se habilita: el agente le</tspan><tspan x="700" y="476.0">informa qué condición falta</tspan><tspan x="700" y="494.0">(decisión del grupo)</tspan><tspan x="700" y="512.0">Si falta la encuesta → aplica R2</tspan></text></g><g class="nodo fin" data-id="Gf"><rect x="560.0" y="600" width="280" height="50" rx="25.0" /><text text-anchor="middle" dominant-baseline="middle"><tspan x="700" y="625.0">Fin: ingreso no habilitado</tspan></text></g><g class="nodo regla" data-id="E"><rect x="130.0" y="600" width="340" height="60" rx="8" /><text text-anchor="middle" dominant-baseline="middle"><tspan x="300" y="621.0">Habilitar su ingreso a la</tspan><tspan x="300" y="639.0">búsqueda de compañeros (R1)</tspan></text></g><g class="nodo fin" data-id="F"><rect x="130.0" y="700" width="340" height="50" rx="25.0" /><text text-anchor="middle" dominant-baseline="middle"><tspan x="300" y="725.0">Fin: el jugador busca compañeros</tspan></text></g></svg>
+          <figcaption>El jugador pide entrar, el agente consulta sanciones, encuesta y micrófono, y habilita el ingreso solo si se cumplen las tres condiciones. Si no puede obtener los datos, deriva el caso a un moderador.</figcaption>
+        </figure>
+      </div>
+
+      <div class="subbloque simulador" data-flujo="r1">
+        <h3>Recorré un caso</h3>
+        <p>Marcá la situación del jugador y el diagrama resalta el camino que seguiría el agente.</p>
+        <fieldset>
+          <legend class="sr-only">Situación del jugador para R1</legend>
+          <label><input type="checkbox" name="sancion"> Tiene una sanción activa</label>
+          <label><input type="checkbox" name="encuesta" checked> Completó la encuesta</label>
+          <label><input type="checkbox" name="mic" checked> Dispone de micrófono</label>
+          <label><input type="checkbox" name="datos" checked> El agente pudo obtener los tres datos</label>
+        </fieldset>
+        <p class="resultado" aria-live="polite"></p>
       </div>
 
       <div class="subbloque detalles">
-        <h3>Detalles</h3>
-        <p class="pendiente">Pendiente: desplegables en la etapa 2.</p>
+        <h3>Detalles de la solución</h3>
+
+        <details>
+          <summary>Qué datos entran</summary>
+          <ul>
+            <li>Si el jugador tiene sanciones activas o no, desde el registro de moderación.</li>
+            <li>Si completó la encuesta requerida, desde el registro de encuestas.</li>
+            <li>Si dispone de micrófono, con una prueba de audio antes de entrar.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Qué se decide</summary>
+          <p>El agente se pregunta si se cumplen las tres condiciones a la vez: <em>no</em> tiene sanciones activas <strong>y</strong> completó la encuesta <strong>y</strong> dispone de micrófono. Es una conjunción: si una sola falla, la condición de R1 no se cumple.</p>
+          <p>Ojo con la negación: lo que se pide es que el jugador <em>no</em> tenga sanciones activas. Una sanción vieja que ya terminó no impide el ingreso.</p>
+        </details>
+
+        <details>
+          <summary>Qué acción se propone y cuál es el resultado</summary>
+          <p>Si se cumplen las tres condiciones, el agente habilita el ingreso a la búsqueda de compañeros y le avisa al jugador. El resultado es que el jugador ya puede buscar compañeros.</p>
+          <p>Si falta alguna, el agente no habilita el ingreso y le explica al jugador qué condición falta, para que sepa qué hacer.</p>
+        </details>
+
+        <details>
+          <summary>Excepciones e intervención humana</summary>
+          <p>Caso límite: el registro de moderación no responde, o la sanción vence justo hoy y no queda claro si sigue activa. En ese caso el agente no habilita a ciegas ni rechaza sin motivo: deriva el caso a un moderador humano, que decide.</p>
+          <p>Si el jugador no habilitado cree que es un error (por ejemplo, una sanción que considera injusta), puede pedir revisión al mismo moderador.</p>
+        </details>
+
+        <details>
+          <summary>Qué viene de la regla y qué agrega el grupo</summary>
+          <ul>
+            <li><strong>De la regla:</strong> cuando se cumplen las tres condiciones, se habilita el ingreso.</li>
+            <li><strong>Decisión del grupo:</strong> qué pasa cuando no se cumplen. R1 no lo dice; nosotros proponemos no habilitar e informar el motivo. Que la condición no se cumpla no obliga lógicamente a rechazar: es una decisión de diseño.</li>
+            <li><strong>Decisión del grupo:</strong> derivar a un moderador cuando el agente no puede obtener los datos.</li>
+            <li><strong>Decisión del grupo:</strong> si lo que falta es la encuesta, aplicar R2.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Tabla de verdad de R1</summary>
+          <div class="tabla-scroll">
+            <table>
+              <caption>V = verdadero, F = falso. Solo la primera fila cumple la condición de R1.</caption>
+              <thead>
+                <tr><th scope="col">No tiene sanciones activas</th><th scope="col">Completó la encuesta</th><th scope="col">Dispone de micrófono</th><th scope="col">Condición R1</th><th scope="col">Qué pasa</th></tr>
+              </thead>
+              <tbody>
+                <tr class="cumple"><td>V</td><td>V</td><td>V</td><td>V</td><td>Se habilita el ingreso (regla)</td></tr>
+                <tr><td>V</td><td>V</td><td>F</td><td>F</td><td>No se habilita, se pide micrófono (grupo)</td></tr>
+                <tr><td>V</td><td>F</td><td>V</td><td>F</td><td>No se habilita, aplica R2</td></tr>
+                <tr><td>V</td><td>F</td><td>F</td><td>F</td><td>No se habilita, aplica R2 y se pide micrófono</td></tr>
+                <tr><td>F</td><td>V</td><td>V</td><td>F</td><td>No se habilita, se informa la sanción (grupo)</td></tr>
+                <tr><td>F</td><td>V</td><td>F</td><td>F</td><td>No se habilita, se informa sanción y micrófono (grupo)</td></tr>
+                <tr><td>F</td><td>F</td><td>V</td><td>F</td><td>No se habilita, se informa la sanción y aplica R2</td></tr>
+                <tr><td>F</td><td>F</td><td>F</td><td>F</td><td>No se habilita, se informan los tres motivos y aplica R2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details>
+          <summary>Casos para probar el flujo</summary>
+          <ul>
+            <li><strong>Cumple:</strong> sin sanción, encuesta completa y con micrófono → se habilita el ingreso.</li>
+            <li><strong>No cumple:</strong> con encuesta y micrófono pero con una sanción activa → no se habilita y se informa el motivo.</li>
+            <li><strong>Caso límite:</strong> el registro de moderación no responde → se deriva a un moderador humano.</li>
+          </ul>
+        </details>
       </div>
     </section>
 
+    <!-- ===================== R2 ===================== -->
     <section id="r2" class="sentencia">
       <h2>Sentencia 2 · R2</h2>
       <blockquote class="original">
@@ -82,8 +189,8 @@
         <h3>Recorrido</h3>
         <p class="explicacion">El flujo revisa solo el dato que define la regla: el estado de la encuesta requerida. Si no está completa, el sistema solicita completarla y deja explícito que no hay sanción. Si está completa, R2 no aplica y el proceso continúa con la evaluación de R1; ese paso posterior es una <span class="marca-grupo">decisión del grupo</span>, porque la regla no lo define.</p>
 
-        <figure class="diagrama">
-          <svg viewBox="0 0 760 520" role="img" aria-labelledby="r2-titulo r2-desc" xmlns="http://www.w3.org/2000/svg">
+        <figure class="figura">
+          <svg class="diagrama" viewBox="0 0 760 520" role="img" aria-labelledby="r2-titulo r2-desc" xmlns="http://www.w3.org/2000/svg">
             <title id="r2-titulo">Diagrama del flujo R2</title>
             <desc id="r2-desc">Inicio, consulta del estado de la encuesta requerida, decisión. Si no está completa: solicita completar encuesta sin atribuir sanción y resultado pendiente. Si está completa: R2 no aplica y pasa a evaluar R1. Caso límite: error o encuesta a medias deriva a revisión humana.</desc>
             <defs>
@@ -92,71 +199,82 @@
               </marker>
             </defs>
 
-            <rect x="290" y="20" width="180" height="44" rx="22" class="nodo nodo-inicio" />
-            <text x="380" y="47" text-anchor="middle" class="nodo-texto">Inicio</text>
+            <rect data-id="A" x="290" y="20" width="180" height="44" rx="22" class="nodo nodo-inicio" />
+            <text data-id="A" x="380" y="47" text-anchor="middle" class="nodo-texto">Inicio</text>
 
-            <line x1="380" y1="64" x2="380" y2="92" class="flecha" marker-end="url(#flecha-r2)" />
+            <line data-id="A-B" x1="380" y1="64" x2="380" y2="92" class="flecha" marker-end="url(#flecha-r2)" />
 
-            <rect x="245" y="92" width="270" height="52" rx="10" class="nodo nodo-dato" />
-            <text x="380" y="114" text-anchor="middle" class="nodo-texto">Consultar estado de la</text>
-            <text x="380" y="132" text-anchor="middle" class="nodo-texto">encuesta requerida</text>
+            <rect data-id="B" x="245" y="92" width="270" height="52" rx="10" class="nodo nodo-dato" />
+            <text data-id="B" x="380" y="114" text-anchor="middle" class="nodo-texto">Consultar estado de la</text>
+            <text data-id="B" x="380" y="132" text-anchor="middle" class="nodo-texto">encuesta requerida</text>
 
-            <line x1="380" y1="144" x2="380" y2="178" class="flecha" marker-end="url(#flecha-r2)" />
+            <line data-id="B-C" x1="380" y1="144" x2="380" y2="178" class="flecha" marker-end="url(#flecha-r2)" />
 
-            <polygon points="380,178 470,228 380,278 290,228" class="nodo nodo-decision" />
-            <text x="380" y="224" text-anchor="middle" class="nodo-texto">¿Encuesta</text>
-            <text x="380" y="242" text-anchor="middle" class="nodo-texto">completa?</text>
+            <polygon data-id="C" points="380,178 470,228 380,278 290,228" class="nodo nodo-decision" />
+            <text data-id="C" x="380" y="224" text-anchor="middle" class="nodo-texto">¿Encuesta</text>
+            <text data-id="C" x="380" y="242" text-anchor="middle" class="nodo-texto">completa?</text>
 
             <!-- Rama No -->
-            <line x1="290" y1="228" x2="170" y2="228" class="flecha" marker-end="url(#flecha-r2)" />
-            <text x="230" y="218" text-anchor="middle" class="etiqueta-rama">No</text>
+            <line data-id="C-D" x1="290" y1="228" x2="170" y2="228" class="flecha" marker-end="url(#flecha-r2)" />
+            <text data-id="C-D" x="230" y="218" text-anchor="middle" class="etiqueta-rama">No</text>
 
-            <rect x="30" y="196" width="140" height="64" rx="10" class="nodo nodo-accion" />
-            <text x="100" y="218" text-anchor="middle" class="nodo-texto">Solicitar completar</text>
-            <text x="100" y="236" text-anchor="middle" class="nodo-texto">la encuesta</text>
+            <rect data-id="D" x="30" y="196" width="140" height="64" rx="10" class="nodo nodo-accion" />
+            <text data-id="D" x="100" y="218" text-anchor="middle" class="nodo-texto">Solicitar completar</text>
+            <text data-id="D" x="100" y="236" text-anchor="middle" class="nodo-texto">la encuesta</text>
 
-            <line x1="100" y1="260" x2="100" y2="292" class="flecha" marker-end="url(#flecha-r2)" />
+            <line data-id="D-E" x1="100" y1="260" x2="100" y2="292" class="flecha" marker-end="url(#flecha-r2)" />
 
-            <rect x="20" y="292" width="160" height="56" rx="10" class="nodo nodo-regla" />
-            <text x="100" y="314" text-anchor="middle" class="nodo-texto">No atribuir</text>
-            <text x="100" y="332" text-anchor="middle" class="nodo-texto">sanción</text>
+            <rect data-id="E" x="20" y="292" width="160" height="56" rx="10" class="nodo nodo-regla" />
+            <text data-id="E" x="100" y="314" text-anchor="middle" class="nodo-texto">No atribuir</text>
+            <text data-id="E" x="100" y="332" text-anchor="middle" class="nodo-texto">sanción</text>
 
-            <line x1="100" y1="348" x2="100" y2="382" class="flecha" marker-end="url(#flecha-r2)" />
+            <line data-id="E-F" x1="100" y1="348" x2="100" y2="382" class="flecha" marker-end="url(#flecha-r2)" />
 
-            <rect x="15" y="382" width="170" height="56" rx="10" class="nodo nodo-resultado" />
-            <text x="100" y="404" text-anchor="middle" class="nodo-texto">Resultado: encuesta</text>
-            <text x="100" y="422" text-anchor="middle" class="nodo-texto">pendiente, sin sanción</text>
+            <rect data-id="F" x="15" y="382" width="170" height="56" rx="10" class="nodo nodo-resultado" />
+            <text data-id="F" x="100" y="404" text-anchor="middle" class="nodo-texto">Resultado: encuesta</text>
+            <text data-id="F" x="100" y="422" text-anchor="middle" class="nodo-texto">pendiente, sin sanción</text>
 
             <!-- Rama Sí -->
-            <line x1="470" y1="228" x2="590" y2="228" class="flecha" marker-end="url(#flecha-r2)" />
-            <text x="530" y="218" text-anchor="middle" class="etiqueta-rama">Sí</text>
+            <line data-id="C-G" x1="470" y1="228" x2="590" y2="228" class="flecha" marker-end="url(#flecha-r2)" />
+            <text data-id="C-G" x="530" y="218" text-anchor="middle" class="etiqueta-rama">Sí</text>
 
-            <rect x="590" y="196" width="150" height="64" rx="10" class="nodo nodo-grupo" />
-            <text x="665" y="218" text-anchor="middle" class="nodo-texto">R2 no aplica</text>
-            <text x="665" y="236" text-anchor="middle" class="nodo-texto">pasa a evaluar R1</text>
+            <rect data-id="G" x="590" y="196" width="150" height="64" rx="10" class="nodo nodo-grupo" />
+            <text data-id="G" x="665" y="218" text-anchor="middle" class="nodo-texto">R2 no aplica</text>
+            <text data-id="G" x="665" y="236" text-anchor="middle" class="nodo-texto">pasa a evaluar R1</text>
 
-            <line x1="665" y1="260" x2="665" y2="382" class="flecha" marker-end="url(#flecha-r2)" />
+            <line data-id="G-Gf" x1="665" y1="260" x2="665" y2="382" class="flecha" marker-end="url(#flecha-r2)" />
 
-            <rect x="590" y="382" width="150" height="56" rx="10" class="nodo nodo-resultado" />
-            <text x="665" y="404" text-anchor="middle" class="nodo-texto">Resultado: continúa</text>
-            <text x="665" y="422" text-anchor="middle" class="nodo-texto">el flujo de ingreso</text>
+            <rect data-id="Gf" x="590" y="382" width="150" height="56" rx="10" class="nodo nodo-resultado" />
+            <text data-id="Gf" x="665" y="404" text-anchor="middle" class="nodo-texto">Resultado: continúa</text>
+            <text data-id="Gf" x="665" y="422" text-anchor="middle" class="nodo-texto">el flujo de ingreso</text>
 
             <!-- Caso límite -->
-            <line x1="380" y1="278" x2="380" y2="332" class="flecha flecha-limite" marker-end="url(#flecha-r2)" />
-            <text x="430" y="308" text-anchor="middle" class="etiqueta-rama etiqueta-limite">Caso límite</text>
+            <line data-id="C-H" x1="380" y1="278" x2="380" y2="332" class="flecha flecha-limite" marker-end="url(#flecha-r2)" />
+            <text data-id="C-H" x="430" y="308" text-anchor="middle" class="etiqueta-rama etiqueta-limite">Caso límite</text>
 
-            <rect x="270" y="332" width="220" height="64" rx="10" class="nodo nodo-humano" />
-            <text x="380" y="354" text-anchor="middle" class="nodo-texto">Encuesta a medias o error</text>
-            <text x="380" y="372" text-anchor="middle" class="nodo-texto">reportado por el jugador</text>
+            <rect data-id="H" x="270" y="332" width="220" height="64" rx="10" class="nodo nodo-humano" />
+            <text data-id="H" x="380" y="354" text-anchor="middle" class="nodo-texto">Encuesta a medias o error</text>
+            <text data-id="H" x="380" y="372" text-anchor="middle" class="nodo-texto">reportado por el jugador</text>
 
-            <line x1="380" y1="396" x2="380" y2="432" class="flecha flecha-limite" marker-end="url(#flecha-r2)" />
+            <line data-id="H-Hf" x1="380" y1="396" x2="380" y2="432" class="flecha flecha-limite" marker-end="url(#flecha-r2)" />
 
-            <rect x="255" y="432" width="250" height="64" rx="10" class="nodo nodo-humano" />
-            <text x="380" y="454" text-anchor="middle" class="nodo-texto">Recordatorio sin sanción</text>
-            <text x="380" y="472" text-anchor="middle" class="nodo-texto">+ revisión humana</text>
+            <rect data-id="Hf" x="255" y="432" width="250" height="64" rx="10" class="nodo nodo-humano" />
+            <text data-id="Hf" x="380" y="454" text-anchor="middle" class="nodo-texto">Recordatorio sin sanción</text>
+            <text data-id="Hf" x="380" y="472" text-anchor="middle" class="nodo-texto">+ revisión humana</text>
           </svg>
           <figcaption>Diagrama R2. La acción «pasa a evaluar R1» y el caso límite son <span class="marca-grupo">decisiones del grupo</span>; la ausencia de sanción viene indicada por la regla.</figcaption>
         </figure>
+      </div>
+
+      <div class="subbloque simulador" data-flujo="r2">
+        <h3>Recorré un caso</h3>
+        <p>Marcá la situación del jugador y el diagrama resalta el camino que seguiría el agente.</p>
+        <fieldset>
+          <legend class="sr-only">Situación del jugador para R2</legend>
+          <label><input type="checkbox" name="encuesta"> Completó la encuesta</label>
+          <label><input type="checkbox" name="problema"> Reporta un problema con la encuesta</label>
+        </fieldset>
+        <p class="resultado" aria-live="polite"></p>
       </div>
 
       <div class="subbloque detalles">
@@ -198,10 +316,22 @@
       </div>
     </section>
 
+    <section id="relacion" class="bloque">
+      <h2>Cómo se conectan R1 y R2</h2>
+      <p>Las dos sentencias son del mismo bloque, «Ingreso a la búsqueda», y se complementan. R1 dice cuándo se habilita el ingreso. R2 se ocupa de uno de los motivos por los que R1 puede no cumplirse: que falte la encuesta.</p>
+      <ol class="pasos">
+        <li>El jugador pide entrar a la búsqueda y el agente evalúa R1.</li>
+        <li>Si R1 no se cumple porque falta la encuesta, aplica R2: se le pide completarla, sin sanción.</li>
+        <li>Cuando el jugador completa la encuesta, el agente vuelve a evaluar R1.</li>
+      </ol>
+      <p class="nota">Que R1 lleve a R2 cuando falta la encuesta es una decisión del grupo para unir los dos flujos; ninguna de las dos sentencias lo exige.</p>
+    </section>
+
   </main>
 
   <footer>
-    <p>Grupo 15 · ValoVibes · TP3 Front End · IFTS 29</p>
+    <p>Grupo 15 · IFTS 29 · TP3 Front End · 2026</p>
+    <p>ValoVibes y su logo pertenecen a sus creadores, estudiantes del IFTS 16.</p>
   </footer>
 
   <script src="script.js" defer></script>
