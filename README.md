@@ -29,7 +29,7 @@ La landing no usa IA, no ejecuta agentes y no se conecta a APIs.
 ## Enlaces
 
 - **Repositorio:** https://github.com/Nicoalazar/tp3-frontend-grupo15.git
-- **Landing (Vercel):** `[Pegar acá la URL de producción que devuelve Vercel al publicar]`
+- **Landing (Vercel):** https://tp3-frontend-grupo15.vercel.app/
 
 > La landing se publica conectando este repositorio a Vercel (ver «Cómo reproducir → Publicar en Vercel»). Cuando Vercel devuelva la URL, se pega en el punto anterior y se repite la comprobación en ventana sin sesión.
 
@@ -40,7 +40,7 @@ Cada enlace se abre en una ventana privada, **sin iniciar sesión** en GitHub ni
 | Enlace | Cómo se comprobó | Resultado |
 |---|---|---|
 | Repositorio | `git ls-remote` sin credenciales y apertura de la URL en ventana privada, sin sesión | Verificado el 25/11/2026: el repositorio es público, abre sin iniciar sesión y muestra la rama `main`. |
-| Landing en Vercel | Abrir la URL publicada en ventana privada | Pendiente: se completa al publicar (etapa 5). |
+| Landing en Vercel | Abrir la URL publicada en ventana privada | Responde sin sesión (HTTP 200) y los archivos publicados son idénticos a `main`. Revisión visual en desktop: [Pendiente - Fer]. |
 
 Al publicar la landing se revisa, siempre sin sesión:
 
@@ -166,7 +166,7 @@ Para detener el servidor, `Ctrl + C`.
 | R2 caso que no cumple: encuesta completa → sigue R1 | [Pendiente] |
 | R2 caso límite: reporta problema → soporte humano | [Pendiente] |
 | El repo abre en ventana sin sesión | Sí — verificado por Chris el 25/11/2026 (público, sin iniciar sesión) |
-| La landing abre en ventana sin sesión y muestra la versión final | Pendiente: se completa al publicar en Vercel |
+| La landing abre en ventana sin sesión y muestra la versión final | Responde sin sesión (HTTP 200) y los archivos son idénticos a `main`. Revisión visual en desktop: [Pendiente - Fer]. |
 
 ### README
 - [ ] Grupo, integrantes y aporte concreto de cada uno.
