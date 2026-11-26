@@ -467,7 +467,7 @@ tr.cumple td {
   }
 }
 
-/* Etapa 2 · contenido, diagramas y detalles */
+/* Etapa 2 â€” contenido, diagramas y detalles */
 .propuesta-titulo {
   margin: 0 0 0.5rem;
   font-size: 1.1rem;
@@ -512,9 +512,16 @@ tr.cumple td {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.nodo {
+/* El borde va solo en las formas: si se aplica al <g>, el texto lo hereda
+   y el trazo tapa el relleno de las letras (ilegible en modo claro). */
+.nodo rect,
+.nodo polygon {
   stroke: var(--borde);
   stroke-width: 1.5;
+}
+
+.nodo text {
+  stroke: none;
 }
 
 .nodo-inicio { fill: #ede9fe; }
