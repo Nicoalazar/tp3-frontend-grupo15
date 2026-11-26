@@ -92,30 +92,32 @@ Desarrollo de Sistemas Web · Front End · IFTS 29 · 2026 · 2do cuatrimestre
 ### Revisión entre integrantes (criterio 01 · Propone)
 lauB revisa R2 y lauO revisa R1. Cada una deja **una mejora concreta** (por ejemplo, un rótulo confuso, un caso que falta o una flecha mal ubicada). Nico se la pide al agente y el README documenta: quién revisó, qué detectó, qué se cambió.
 
+**Cómo quedó:** lauB propuso la mejora sobre R2 (iteración 6). La revisión de R1 asignada a lauO no quedó registrada en el repo, así que la hizo Nico (iteración 7).
+
 ---
 
 ## 5. Checklist final (antes de entregar)
 
 **Contenido y lógica**
-- [ ] Startup (nombre, logo original, servicio, problema), equipo y bloque identificados; se reconoce el origen en el IFTS 16.
-- [ ] Las dos sentencias con redacción original y una propuesta (título + beneficio en 2–3 frases) para cada una.
-- [ ] Los dos flujos respetan las condiciones originales («y», negación, «sin atribuir sanción»).
-- [ ] Se distingue qué viene de la regla y qué es decisión del grupo.
-- [ ] Cada flujo tiene un caso límite con intervención humana.
+- [x] Startup (nombre, logo original, servicio, problema), equipo y bloque identificados; se reconoce el origen en el IFTS 16.
+- [x] Las dos sentencias con redacción original y una propuesta (título + beneficio en 2–3 frases) para cada una.
+- [x] Los dos flujos respetan las condiciones originales («y», negación, «sin atribuir sanción»).
+- [x] Se distingue qué viene de la regla y qué es decisión del grupo.
+- [x] Cada flujo tiene un caso límite con intervención humana.
 
 **Diseño y funcionamiento**
-- [ ] Logo y diagramas completos y legibles.
-- [ ] Desplegables con clic y con teclado.
-- [ ] Se lee y recorre en desktop sin desbordes.
-- [ ] Otra persona puede explicar la propuesta después de recorrerla.
+- [x] Logo y diagramas completos y legibles.
+- [x] Desplegables con clic y con teclado.
+- [x] Se lee y recorre en desktop sin desbordes.
+- [x] Otra persona puede explicar la propuesta después de recorrerla (Chris la recorrió y la puede explicar).
 
 **README**
-- [ ] Grupo, integrantes y aporte concreto de cada uno.
-- [ ] Startup y bloque.
-- [ ] Enlace al repositorio y a la landing (verificados sin sesión).
-- [ ] Cómo reproducir el proyecto + comprobación de enlaces y funcionamiento.
-- [ ] Aplicación y modelo de IA usados (nombre tal como aparece; si no figura: «modelo no informado»), para qué y qué cambios se pidieron.
-- [ ] Evidencia de iteración: instrucción inicial → problema detectado → pedido de mejora → qué cambió y por qué.
+- [x] Grupo, integrantes y aporte concreto de cada uno.
+- [x] Startup y bloque.
+- [x] Enlace al repositorio y a la landing (verificados sin sesión).
+- [x] Cómo reproducir el proyecto + comprobación de enlaces y funcionamiento.
+- [x] Aplicación y modelo de IA usados (nombre tal como aparece; si no figura: «modelo no informado»), para qué y qué cambios se pidieron.
+- [x] Evidencia de iteración: instrucción inicial → problema detectado → pedido de mejora → qué cambió y por qué.
 - [x] Revisión entre integrantes y la mejora surgida.
 
 ---
@@ -124,7 +126,7 @@ lauB revisa R2 y lauO revisa R1. Cada una deja **una mejora concreta** (por ejem
 
 | Criterio | Para «Propone» | Evidencia |
 |---|---|---|
-| 01 · Participación | Revisión entre integrantes + mejora concreta | README: aportes + sección de revisión cruzada (lauB ↔ lauO) |
+| 01 · Participación | Revisión entre integrantes + mejora concreta | README: aportes + sección de revisión cruzada (lauB sobre R2, Nico sobre R1) e iteraciones 6 y 7 |
 | 02 · Repo y landing | README reproducible + comprobación de enlaces y funcionamiento | README: cómo reproducir + checklist de Fer y Chris |
 | 03 · Landing | Organización clara + recursos de navegación/explicación | Índice fijo, leyenda, tabla de verdad, «Recorré un caso» |
 | 04 · Dos flujos | Caso límite/excepción por flujo, con intervención humana | Diagramas + desplegables de excepciones |
@@ -140,5 +142,5 @@ lauB revisa R2 y lauO revisa R1. Cada una deja **una mejora concreta** (por ejem
 | 1 · Estructura | Hecha | `index.html`, `styles.css` y `script.js`: hero con logo completo, índice fijo que marca la sección visible, bloque de la startup y una sección por sentencia con la redacción original. Propuesta, recorrido y detalles quedan como marcadores para la etapa 2. Verificada en el navegador: el logo carga, no hay desborde horizontal y el índice cambia de sección al hacer scroll. |
 | 2 · Contenido y diagramas | Hecha (revisión cruzada de R2 propuesta por lauB y de R1 hecha por Nico, las dos aplicadas) | Propuesta con título y beneficio para R1 y R2, dos diagramas SVG con alternativas Sí/No rotuladas, desplegables con datos, decisión, acción, excepciones y qué es decisión del grupo. Hecho con Claude (claude.ai), modelo Claude Opus 5.5. |
 | 3 · Diseño y «Propone» | Hecha (Fer confirmó clic y teclado en desktop) | Leyenda, tablas de verdad, «Recorré un caso» que resalta el camino, sección que une R1 y R2. Probado en desktop 1366 px: sin desbordes, desplegables con Enter/Espacio, modo claro y oscuro. |
-| 4 · README | En curso | Estructura completa. Chris completó su aporte, «cómo reproducir», enlaces y la comprobación en ventana sin sesión (repo verificado el 25/11/2026); Ya están los aportes de todos, la checklist de Fer, las iteraciones 1 a 7 y la revisión cruzada (lauB sobre R2; Nico sobre R1, porque la de lauO no quedó en el repo). |
+| 4 · README | Hecha | Aportes de los cinco integrantes, startup y bloque, enlaces verificados sin sesión, «cómo reproducir» (Chris), checklist de pruebas (Fer), herramientas de IA con modelo, iteraciones 1 a 7 y revisión cruzada (lauB sobre R2; Nico sobre R1, porque la de lauO no quedó en el repo). Checklists completas el 26/11/2026; Chris recorrió la landing y puede explicar la propuesta. |
 | 5 · Publicación | Hecha (revisión visual de Fer hecha) | Repo público en GitHub. Landing publicada en https://tp3-frontend-grupo15.vercel.app/ (Vercel, conectada por Chris). Responde sin sesión (HTTP 200) y los archivos publicados son idénticos a `main`. URL cargada en el README. Fer hizo la revisión visual en desktop. |

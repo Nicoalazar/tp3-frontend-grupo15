@@ -31,7 +31,7 @@ La landing no usa IA, no ejecuta agentes y no se conecta a APIs.
 - **Repositorio:** https://github.com/Nicoalazar/tp3-frontend-grupo15.git
 - **Landing (Vercel):** https://tp3-frontend-grupo15.vercel.app/
 
-> La landing se publica conectando este repositorio a Vercel (ver «Cómo reproducir → Publicar en Vercel»). Cuando Vercel devuelva la URL, se pega en el punto anterior y se repite la comprobación en ventana sin sesión.
+> La landing se publica conectando este repositorio a Vercel (ver «Cómo reproducir → Publicar en Vercel»). Cada push a `main` vuelve a publicarla.
 
 ### Comprobación de enlaces y funcionamiento en ventana sin sesión
 
@@ -40,16 +40,18 @@ Cada enlace se abre en una ventana privada, **sin iniciar sesión** en GitHub ni
 | Enlace | Cómo se comprobó | Resultado |
 |---|---|---|
 | Repositorio | `git ls-remote` sin credenciales y apertura de la URL en ventana privada, sin sesión | Verificado el 25/11/2026: el repositorio es público, abre sin iniciar sesión y muestra la rama `main`. |
-| Landing en Vercel | Abrir la URL publicada en ventana privada | Responde sin sesión (HTTP 200) y los archivos publicados son idénticos a `main`. Revisión visual en desktop: [Pendiente - Fer]. |
+| Landing en Vercel | Abrir la URL publicada en ventana privada | Responde sin sesión (HTTP 200) y los archivos publicados son idénticos a `main`. Fer hizo la revisión visual en desktop. Última comprobación el 26/11/2026. |
 
 Al publicar la landing se revisa, siempre sin sesión:
 
-- [ ] La página abre con su hoja de estilos y el logo `assets/logo-valovibes.webp` se ve completo.
-- [ ] El índice fijo navega a Startup, Cómo leer, R1, R2 y R1 + R2.
-- [ ] Los desplegables de R1 y R2 abren y cierran con clic y con teclado (Tab + Enter/Espacio).
-- [ ] «Recorré un caso» cambia el camino resaltado en los dos diagramas.
-- [ ] No hay desborde horizontal ni recursos faltantes (consola y red del navegador).
-- [ ] El contenido coincide con el último commit de `main`.
+- [x] La página abre con su hoja de estilos y el logo `assets/logo-valovibes.webp` se ve completo.
+- [x] El índice fijo navega a Startup, Cómo leer, R1, R2 y R1 + R2.
+- [x] Los desplegables de R1 y R2 abren y cierran con clic y con teclado (Tab + Enter/Espacio).
+- [x] «Recorré un caso» cambia el camino resaltado en los dos diagramas.
+- [x] No hay desborde horizontal ni recursos faltantes (consola y red del navegador).
+- [x] El contenido coincide con el último commit de `main`.
+
+Última comprobación sobre la URL publicada: 26/11/2026. `styles.css`, `script.js` y el logo responden 200, la consola no muestra errores y los archivos publicados son idénticos a los de `main`.
 
 ## Integrantes y aportes
 
@@ -60,9 +62,6 @@ Al publicar la landing se revisa, siempre sin sesión:
 | **lauO** | Responsable de R2 | Validó la ficha de R2 (dato, condición, consecuencia). Completó la sección R2: propuesta, explicación textual, diagrama SVG con ramas Sí/No y desplegables `<details>`. Controló que el flujo muestre explícitamente «sin atribuir sanción» y el vínculo con R1. Definió el caso límite con intervención humana. |
 | **Fer** | Pruebas (QA) | Ejecuté la auditoría integral y las pruebas funcionales de punta a punta en desktop (1366x768). Verifiqué los 13 puntos de la checklist de pruebas: logo completo (`assets/logo-valovibes.webp`), diagramas SVG legibles y adaptativos en modos claro y oscuro, apertura/cierre de desplegables por clic y teclado (Tab + Enter/Espacio), ausencia de desbordes horizontales (`overflow-x: hidden`), y validación completa de los flujos de R1 y R2 (casos que cumplen, que no cumplen y casos límite). Actualicé el README.md con los resultados detallados y dejé el repositorio limpio y listo para commit. |
 | **Chris** | Material y publicación | Verifiqué el logo original (`assets/logo-valovibes.webp`: 640×640, 9.682 bytes, SHA-256 `a47ac81b…632b44`, idéntico al publicado por la cátedra) y que la landing lo muestre completo, sin recortes. Revisé las rutas relativas y la publicación como sitio estático sin build, dejé listos los pasos para conectar el repo con Vercel y la comprobación de los dos enlaces en ventana sin sesión. Redacté «Cómo reproducir» y la sección de enlaces/comprobación. En la revisión previa al deploy detecté que los textos del diagrama R1 heredaban el borde de los nodos y quedaban ilegibles; pedí la corrección y la verifiqué en modo claro y oscuro. |
-
-> Cada integrante debe completar o ampliar su propio aporte antes de la entrega.
-
 ### Revisión entre integrantes
 
 - **lauB revisa R2:** Le pidió a su agente que revisara el flujo de R2. El agente detectó que en «Recorré un caso» se podía marcar «Reporta un problema con la encuesta» con la encuesta completa y el diagrama no cambiaba, lo que confundía. lauB propuso que esa opción quede deshabilitada mientras la encuesta esté completa, con un texto que explica cuándo se usa. Nico aplicó la propuesta en el repo con su agente y la verificó en el navegador.
@@ -72,14 +71,12 @@ Al publicar la landing se revisa, siempre sin sesión:
 
 | Aplicación | Modelo | Quién la usó | Para qué |
 |---|---|---|---|
-| Claude Code | Haiku 5.5. Al inicio de la sesión se usó Opus 5.5, y Opus 5.5 quedó como asesor. | Nico | Plan de trabajo, descarga del logo, estructura de la landing (etapas 0 y 1) y commits. |
+| Claude Code | Opus 5.5 y Haiku 5.5. Se empezó con Opus 5.5, la mayor parte se hizo con Haiku 5.5 (con Opus 5.5 como asesor) y la etapa final volvió a Opus 5.5. | Nico | Plan de trabajo, descarga del logo y estructura de la landing (etapas 0 y 1). Resolución del conflicto del PR #2 y simulador de R2. Aplicación de las revisiones cruzadas de R1 y R2, pruebas en el navegador, verificación del deploy, documentación y commits. |
 | OpenCode | big-pickle (`opencode/big-pickle`) | lauO | Apoyo para completar la sección R2 en la etapa 2. |
 | OpenCode | DeepSeek V4.1 Flash Free (`opencode/deepseek-v4.1-flash-free`) | Chris | Revisión del logo y del material, corrección de legibilidad del diagrama R1, revisión de rutas para el deploy y redacción de las secciones de su rol en el README (25/11/2026). |
-| Claude (claude.ai) | Claude Opus 5.5 | Laura Belén Blanco | Contenido de las propuestas, diagramas SVG, desplegables, tablas de verdad, «Recorré un caso» y borrador del README (etapas 2 y 3, PR #2). |
+| Claude (claude.ai) | Claude Opus 5.5 | Laura Belén Blanco | Contenido de las propuestas, diagramas SVG, desplegables, tablas de verdad, «Recorré un caso» y borrador del README (etapas 2 y 3, PR #2). Revisión cruzada de R2. |
 
 Nadie editó el código a mano: todos los cambios se le pidieron a los agentes.
-
-> Si el modelo no figura en la interfaz de una herramienta, escribir «modelo no informado».
 
 ## Registro de iteraciones
 
@@ -92,9 +89,6 @@ Nadie editó el código a mano: todos los cambios se le pidieron a los agentes.
 | 5 | Revisar material, legibilidad y publicación antes del deploy (Chris, etapa 5) | En el diagrama R1 los textos heredaban el `stroke` de la clase `.nodo`: en modo claro quedaban casi blancos y en oscuro se veían sucios, así que el diagrama no se leía con comodidad. El comentario de la etapa 2 en `styles.css` tenía un byte roto. | Aplicar el borde solo a las formas del nodo, dejar el texto sin trazo y corregir el comentario. | `.nodo { stroke… }` pasó a `.nodo rect, .nodo polygon` y se agregó `.nodo text { stroke: none }`; los rótulos de R1 se leen en modo claro y oscuro. Se convirtió `styles.css` a UTF-8 válido y se verificó el logo (640×640, SHA-256 `a47ac81b…632b44`). |
 | 6 | Revisión cruzada de R2 (propuesta de lauB, aplicada por Nico) | En «Recorré un caso» de R2 se podía tildar «Reporta un problema con la encuesta» con la encuesta completa y no pasaba nada, porque ese caso solo aplica cuando falta la encuesta. | Deshabilitar esa opción mientras la encuesta esté completa y explicar cuándo se usa. | La opción se ve apagada y no se puede tildar con la encuesta completa; al destildar la encuesta se vuelve a habilitar. Un texto debajo, vinculado con `aria-describedby`, aclara cuándo se usa. |
 | 7 | Revisión cruzada de R1 (Nico) | El simulador de R1 decía «Como falta la encuesta, aplica R2», pero no había forma de ir a R2 desde ahí. En «Casos para probar» de R1 faltaba el caso de la encuesta incompleta, que es el que une las dos sentencias. | Agregar un enlace a R2 en ese resultado y sumar el caso que falta. | Cuando la encuesta no está completa, el resultado de R1 muestra «Ver cómo sigue en R2», que lleva a la sección R2. «Casos para probar» suma «Falta la encuesta», con enlace a R2. Así el lector sigue el vínculo entre las dos reglas sin buscarlo en el índice. |
-
-> Nico: agregar aquí las iteraciones del resto de las etapas.
-
 ## Cómo reproducir el proyecto
 
 El sitio es HTML, CSS y JavaScript sin dependencias, sin compilación y sin backend: no hacen falta Node, npm ni variables de entorno.
@@ -140,17 +134,17 @@ Para detener el servidor, `Ctrl + C`.
 ## Checklist de comprobación
 
 ### Contenido y lógica
-- [ ] Startup (nombre, logo original, servicio, problema), equipo y bloque identificados; se reconoce el origen en el IFTS 16.
-- [ ] Las dos sentencias con redacción original y una propuesta (título + beneficio en 2–3 frases) para cada una.
-- [ ] Los dos flujos respetan las condiciones originales («y», negación, «sin atribuir sanción»).
-- [ ] Se distingue qué viene de la regla y qué es decisión del grupo.
-- [ ] Cada flujo tiene un caso límite con intervención humana.
+- [x] Startup (nombre, logo original, servicio, problema), equipo y bloque identificados; se reconoce el origen en el IFTS 16.
+- [x] Las dos sentencias con redacción original y una propuesta (título + beneficio en 2–3 frases) para cada una.
+- [x] Los dos flujos respetan las condiciones originales («y», negación, «sin atribuir sanción»).
+- [x] Se distingue qué viene de la regla y qué es decisión del grupo.
+- [x] Cada flujo tiene un caso límite con intervención humana.
 
 ### Diseño y funcionamiento
-- [ ] Logo y diagramas completos y legibles.
-- [ ] Desplegables con clic y con teclado.
-- [ ] Se lee y recorre en desktop sin desbordes.
-- [ ] Otra persona puede explicar la propuesta después de recorrerla.
+- [x] Logo y diagramas completos y legibles.
+- [x] Desplegables con clic y con teclado.
+- [x] Se lee y recorre en desktop sin desbordes.
+- [x] Otra persona puede explicar la propuesta después de recorrerla (Chris la recorrió y la puede explicar).
 
 ### Comprobación de funcionamiento (desktop)
 
@@ -171,13 +165,13 @@ Para detener el servidor, `Ctrl + C`.
 | La landing abre en ventana sin sesión y muestra la versión final | Sí — Responde sin sesión (HTTP 200), los archivos publicados son idénticos a `main` y Fer hizo la revisión visual en desktop. |
 
 ### README
-- [ ] Grupo, integrantes y aporte concreto de cada uno.
-- [ ] Startup y bloque.
-- [ ] Enlace al repositorio y a la landing (verificados sin sesión).
-- [ ] Cómo reproducir el proyecto + comprobación de enlaces y funcionamiento.
-- [ ] Aplicación y modelo de IA usados (nombre tal como aparece; si no figura: «modelo no informado»), para qué y qué cambios se pidieron.
-- [ ] Evidencia de iteración: instrucción inicial → problema detectado → pedido de mejora → qué cambió y por qué.
-- [ ] Revisión entre integrantes y la mejora surgida.
+- [x] Grupo, integrantes y aporte concreto de cada uno.
+- [x] Startup y bloque.
+- [x] Enlace al repositorio y a la landing (verificados sin sesión).
+- [x] Cómo reproducir el proyecto + comprobación de enlaces y funcionamiento.
+- [x] Aplicación y modelo de IA usados (nombre tal como aparece; si no figura: «modelo no informado»), para qué y qué cambios se pidieron.
+- [x] Evidencia de iteración: instrucción inicial → problema detectado → pedido de mejora → qué cambió y por qué.
+- [x] Revisión entre integrantes y la mejora surgida.
 
 ## Estructura del proyecto
 
