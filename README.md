@@ -21,7 +21,7 @@
 - Presentación de la startup con su logo original, el problema, el bloque y el origen en el IFTS 16.
 - Leyenda para leer los diagramas: regla, decisión del grupo, intervención humana, herramienta.
 - Para cada sentencia: texto original, propuesta con título y beneficio, diagrama SVG y desplegables con datos, decisión, acción, resultado, excepciones y caso límite.
-- «Recorré un caso» para R1: JavaScript local que resalta en el diagrama el camino que seguiría el agente.
+- «Recorré un caso» para R1 y R2: JavaScript local que resalta en cada diagrama el camino que seguiría el agente.
 - Una sección que explica cómo se conectan R1 y R2.
 
 La landing no usa IA, no ejecuta agentes y no se conecta a APIs.
@@ -69,7 +69,7 @@ Nadie editó el código a mano: todos los cambios se le pidieron a los agentes.
 | 1 | Armar la estructura de la landing (etapa 1) | [Pendiente] | [Pendiente] | [Pendiente] |
 | 2 | Completar R2: propuesta, explicación, diagrama SVG y desplegables (lauO, etapa 2) | R2 podía perder la obligación explícita de «sin atribuir sanción» o mezclar decisiones del grupo con lo que define la regla. | Mantener la redacción original, mostrar «sin atribuir sanción» como consecuencia obligatoria, rotular Sí/No, incluir el vínculo con R1 y un caso límite con intervención humana. | Se reemplazó el placeholder de R2 por propuesta, explicación, diagrama y desplegables. Se marcó «pasa a evaluar R1» y el caso límite como decisiones del grupo. |
 | 3 | Agregar propuestas, diagramas y desplegables de R1 y R2 (etapas 2 y 3, PR #2) | En el diagrama de R2 el rótulo «No, ya la completó» quedaba encima del recuadro. | Acortar el rótulo. | El rótulo quedó en «No» y el texto «Ya la completó» pasó adentro del recuadro, para que se lea bien. |
-| 4 | Resolver el conflicto del PR #2 con la R2 ya mergeada | Dos versiones de R2 (la de lauO en `main` y la del PR #2) chocaban en `index.html`, y el README tenía dos estructuras distintas. | Elegir una versión de R2 (se mantuvo la de `main`) y unificar el README. | Se conservó la R2 de `main` y se sumó la R1 y las secciones del PR #2. El simulador «Recorré un caso» de R2 del PR #2 quedó fuera, porque su diagrama no tiene los identificadores que necesita. |
+| 4 | Resolver el conflicto del PR #2 con la R2 ya mergeada | Dos versiones de R2 (la de lauO en `main` y la del PR #2) chocaban en `index.html`, y el README tenía dos estructuras distintas. | Elegir una versión de R2 (se mantuvo la de `main`) y unificar el README. | Se conservó la R2 de `main` y se sumó la R1 y las secciones del PR #2. Se portó el simulador «Recorré un caso» de R2 del PR #2 a la estructura del diagrama de `main`: se anotaron los nodos con `data-id` y se ajustó la lógica de `script.js`. |
 
 > Nico: agregar aquí las iteraciones del resto de las etapas.
 

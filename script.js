@@ -68,23 +68,22 @@
     },
 
     r2: function (v) {
-      var pasos = ["A", "A-B", "B", "B-C", "C"];
+      var inicio = ["A", "A-B", "B", "B-C", "C"];
       if (v.encuesta) {
         return {
-          pasos: pasos.concat(["C-G", "G", "G-Gf", "Gf"]),
+          pasos: inicio.concat(["C-G", "G", "G-Gf", "Gf"]),
           texto: "La encuesta ya está completa: R2 no aplica y se sigue con la evaluación de R1 (decisión del grupo)."
         };
       }
-      pasos = pasos.concat(["C-D", "D", "D-E", "E", "E-F", "F"]);
       if (v.problema) {
         return {
-          pasos: pasos.concat(["F-H", "H", "H-Hf", "Hf"]),
-          texto: "Se le pide completar la encuesta sin atribuirle sanción (regla R2). Como reporta un problema, lo revisa una persona de soporte (decisión del grupo)."
+          pasos: inicio.concat(["C-H", "H", "H-Hf", "Hf"]),
+          texto: "Se le pide completar la encuesta sin atribuirle sanción (regla R2). Como reporta un problema, el caso pasa a revisión humana y el recordatorio queda sin sanción (decisión del grupo)."
         };
       }
       return {
-        pasos: pasos.concat(["F-I", "I"]),
-        texto: "Se le pide completar la encuesta sin atribuirle sanción (regla R2). Cuando la complete, se vuelve a evaluar R1."
+        pasos: inicio.concat(["C-D", "D", "D-E", "E", "E-F", "F"]),
+        texto: "Se le pide completar la encuesta sin atribuirle sanción (regla R2). Queda pendiente hasta que la complete; después se vuelve a evaluar R1."
       };
     }
   };
