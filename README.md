@@ -156,8 +156,8 @@ Para detener el servidor, `Ctrl + C`.
 |---|---|
 | El logo se ve completo y legible | Sí — Verificado (archivo `assets/logo-valovibes.webp`, 640×640, SHA-256 `a47ac81b…632b44`, renderizado completo sin recortes en desktop). |
 | Los dos diagramas se leen sin zoom | Sí — Verificado (SVGs vectoriales adaptativos con estilos limpios y contraste correcto en modo claro y oscuro tras corregir la herencia de trazos en `.nodo`). |
-| Desplegables se abren y cierran con clic | Sí — Verificado (elementos nativos `<details>` / `<summary>` operados con clic del mouse). |
-| Desplegables se abren y cierran con teclado (Tab + Enter o Espacio) | Sí — Verificado (etiquetas `<details>` nativas soportan navegación por Tab y activación por Enter y Espacio por defecto en navegadores modernos). |
+| Desplegables se abren y cierran con clic | Sí — Verificado por Fer en el navegador (clic). |
+| Desplegables se abren y cierran con teclado (Tab + Enter o Espacio) | Sí — Verificado por Fer en el navegador (teclado). |
 | Sin desborde horizontal | Sí — Verificado (`overflow-x: hidden` en `body`, contenedores con `max-width` y tablas con contenedor `.tabla-scroll` responsivo). |
 | R1 caso que cumple: sin sanción, con encuesta y micrófono → habilita | Sí — Verificado por simulación de JavaScript: sin sanción (`false`), con encuesta (`true`) y micrófono (`true`), resultado: habilita ingreso (regla R1). |
 | R1 caso que no cumple: sanción activa → no habilita e informa | Sí — Verificado por simulación de JavaScript: con sanción activa (`true`), resultado: no habilita e informa el motivo (decisión del grupo). |
@@ -166,7 +166,7 @@ Para detener el servidor, `Ctrl + C`.
 | R2 caso que no cumple: encuesta completa → sigue R1 | Sí — Verificado por simulación de JavaScript: encuesta completa (`true`), resultado: R2 no aplica y pasa a evaluar R1 (decisión del grupo). |
 | R2 caso límite: reporta problema → soporte humano | Sí — Verificado por simulación de JavaScript: encuesta incompleta (`false`) con reporte de problema (`true`), resultado: recordatorio sin sanción + revisión humana (decisión del grupo). |
 | El repo abre en ventana sin sesión | Sí — verificado por Chris el 25/11/2026 (público, sin iniciar sesión) |
-| La landing abre en ventana sin sesión y muestra la versión final | [Pendiente] |
+| La landing abre en ventana sin sesión y muestra la versión final | Sí — Responde sin sesión (HTTP 200), los archivos publicados son idénticos a `main` y Fer hizo la revisión visual en desktop. |
 
 ### README
 - [ ] Grupo, integrantes y aporte concreto de cada uno.
